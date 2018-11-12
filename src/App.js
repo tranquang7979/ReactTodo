@@ -43,6 +43,10 @@ class App extends Component {
           <div className="total">
             {this.state.items.length} items left 
             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            {this.state.items.filter(x=>x.Done).length} completed items
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            {this.state.items.filter(x=>!x.Done).length} active items
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             {this.state.items.filter(x=>x.Selected).length} selected items
           </div>
           <Footer selectedItems={this.state.items.filter(x=>x.Selected).length}/>

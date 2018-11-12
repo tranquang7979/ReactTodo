@@ -39,13 +39,13 @@ ul.list li{display: inline-block;margin:0 5px;}
 
 .Body {height: 200px;overflow-x: auto;border: 1px solid #eae6e6;border-radius: 3px;margin: 8px 0;}
 .Body .w-next{color: #a9a7a7;}
-.Body>ul>li{clear:both;display: block;padding:10px 8px;min-height: 27px;border-bottom:1px dashed #ccc;background-color: #fff;
+.Body ul>li{clear:both;display: block;padding:10px 8px;min-height: 27px;border-bottom:1px dashed #ccc;background-color: #fff;
   -webkit-transition: background-color 300ms linear;
   -ms-transition: background-color 300ms linear;
   transition: background-color 300ms linear;}
-.Body>ul>li>div:nth-child(1){float:left;}
-.Body>ul>li>div:nth-child(2){float:right;}
-.Body>ul>li.selected{background-color: #d4edda;
+.Body ul>li>div:nth-child(1){float:left;}
+.Body ul>li>div:nth-child(2){float:right;}
+.Body ul>li.selected{background-color: #d4edda;
   -webkit-transition: background-color 300ms linear;
   -ms-transition: background-color 300ms linear;
   transition: background-color 300ms linear;}
@@ -54,3 +54,28 @@ ul.list li{display: inline-block;margin:0 5px;}
 .Footer>div:nth-child(1) {float:left;}
 .Footer>div:nth-child(2) {float:right;}
 
+.todo-animate-enter {
+  opacity: 0.01;
+}
+
+.todo-animate-enter.todo-animate-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.todo-animate-leave {
+  opacity: 1;
+}
+
+.todo-animate-leave.todo-animate-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+.todo-animate-appear {
+  opacity: 0.01;
+}
+
+.todo-animate-appear.todo-animate-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
