@@ -1,3 +1,4 @@
+html{overflow: hidden;}
 body {
   margin: 0;
   padding: 0;
@@ -22,6 +23,8 @@ body {
   }
 }
 
+.total{color:#928f8f;font-style: italic;}
+
 #root {padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
 
 /* list item */
@@ -34,10 +37,20 @@ ul.list li{display: inline-block;margin:0 5px;}
 .Header>table>tbody>tr>td:nth-child(2){width:4%;padding:0 5px;}
 .Header>table>tbody>tr>td:nth-child(2)>.btn{padding: 10px 12px;}
 
-.Body {max-height: 200px;overflow-x: auto;}
+.Body {height: 200px;overflow-x: auto;border: 1px solid #eae6e6;border-radius: 3px;margin: 8px 0;}
 .Body .w-next{color: #a9a7a7;}
-.Body>ul>li{clear:both;display: block;padding:10px 0;min-height: 27px;border-bottom:1px dashed #ccc;}
+.Body>ul>li{clear:both;display: block;padding:10px 8px;min-height: 27px;border-bottom:1px dashed #ccc;background-color: #fff;
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;}
 .Body>ul>li>div:nth-child(1){float:left;}
 .Body>ul>li>div:nth-child(2){float:right;}
+.Body>ul>li.selected{background-color: #d4edda;
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;}
 
 .Footer {clear:both;}
+.Footer>div:nth-child(1) {float:left;}
+.Footer>div:nth-child(2) {float:right;}
+

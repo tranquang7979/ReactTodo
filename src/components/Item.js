@@ -1,35 +1,24 @@
 import React, { Component } from 'react';
-import Checkbox from './Checkbox';
-import Button from './Button';
-import { ToDoContext } from './ToDoContext';
+import Checkbox from './controls/Checkbox';
+import Button from './controls/Button';
+import { ToDoContext } from './context/ToDoContext';
 
 class Item extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      Done: false
-    };
-
-  }
-
   render() {
-    return (
+    return (      
       <ToDoContext.Consumer>
         {({ items, deleteItem, updateStatus, selectItem }) => (
-          <li onClick={() => { selectItem(this.props.children); }}>
+          <li onClick={() => { selectItem(this.props.children); }} 
+              className={`${this.props.children.Selected ? 'selected' : ''}`}>
             <div>
-              <Checkbox change={() => {
-                                  this.setState({ Done: !this.state.Done });
-                                  updateStatus(this.props.children);
-                                }}
-                checked={this.state.Done}>
+              <Checkbox change={() => { updateStatus(this.props.children); }}
+                        checked={this.props.children.Done}>
                 {this.props.children.Name}
               </Checkbox>
             </div>
             <div>
               <Button click={() => { deleteItem(this.props.index); }}
-                styleName="btn-red no-min">
+                      styleName="btn-red no-min">
                 X
             </Button>
             </div>
@@ -39,9 +28,6 @@ class Item extends Component {
     );
   }
 
-  componentDidMount() {
-    this.setState({ Done: this.props.children.Done });
-  }
 }
 
 export default Item;

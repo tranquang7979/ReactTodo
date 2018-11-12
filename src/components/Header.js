@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from './Button';
-import { ToDoContext } from './ToDoContext';
+import Button from './controls/Button';
+import { ToDoContext } from './context/ToDoContext';
 
 class Header extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class Header extends Component {
     render() {
         return (
             <ToDoContext.Consumer>
-                {({ items, insertItem }) => (
+                {({ insertItem }) => (
                     <div className="Header">
                         <h3>Todo App</h3>
                         <table>

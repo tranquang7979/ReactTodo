@@ -5,8 +5,8 @@ class List extends Component {
     renderData() {
         if (this.props.data != null && this.props.data.length > 0) {
             var items = this.props.data
-                                .filter(item => !item.Deleted)
-                                .map((item, index) => {
+                                .filter(item => !item.Deleted && item.Visible)
+                                .map((item, index) => {                                    
                                     return <Item key={index} index={index}>{item}</Item>
                                 });
             return items;
@@ -21,6 +21,7 @@ class List extends Component {
             </ul>
         );
     }
+    
 }
 
 export default List;
